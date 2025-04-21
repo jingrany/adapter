@@ -1,0 +1,21 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /openserver
+spring:
+  servlet:
+    multipart:
+      #单个文件的大小
+      max-file-size: 50MB
+      # 整个请求要求的大小
+      max-request-size: 100MB
+
+logging:
+  level:
+    root: info
+
+#============ mybatis 配置 ==========#
+mybatis-plus:
+  mapper-locations: classpath*:sql-mapper/*.xml
+  type-handlers-package: com.shgame.studio996.sdk.handler
+
