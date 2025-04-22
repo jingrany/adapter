@@ -5,6 +5,6 @@ FROM openjdk:11
 EXPOSE 8085
 #
 ## 定义启动命令，运行Spring Boot应用程序
-ADD ./target/demo-1.0.jar /app.jar
+ADD ./target/app.jar /app.jar
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
