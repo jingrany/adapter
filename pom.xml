@@ -1,209 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>demo1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <parent>
-        <groupId>com.shgame.996studio</groupId>
-        <artifactId>mgn-service</artifactId>
-        <version>1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.5</version>
     </parent>
-    <artifactId>api-manage-openserver</artifactId>
-
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
+        <!--web开发场景启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- feign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-loadbalancer</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.aliyun.openservices</groupId>
-            <artifactId>aliyun-log-logback-appender</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>aliyun-log</artifactId>
-                    <groupId>com.aliyun.openservices</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.netease.yidun/yidun-java-sdk -->
-        <dependency>
-            <groupId>com.aliyun.openservices</groupId>
-            <artifactId>loghub-client-lib</artifactId>
-            <version>0.6.33</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>aliyun-log</artifactId>
-                    <groupId>com.aliyun.openservices</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- 作JVM监控用 -->
-        <!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus -->
-        <!--		<dependency>-->
-        <!--			<groupId>io.micrometer</groupId>-->
-        <!--			<artifactId>micrometer-registry-prometheus</artifactId>-->
-        <!--		</dependency>-->
-
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>alibabacloud-dysmsapi20170525</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-quartz</artifactId>
-        </dependency>
-        <!-- 不能删 否则mapstruct会报错 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <!--mapstruct核心-->
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-        </dependency>
-        <!--mapstruct编译-->
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-        </dependency>
-
-        <!--schedulerx-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.aliyun.schedulerx</groupId>-->
-        <!--            <artifactId>schedulerx2-spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>alibabacloud-imm20200930</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.davidfantasy</groupId>
-            <artifactId>mybatis-plus-generator-ui</artifactId>
-            <version>2.0.5</version>
-        </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>com.shgame.996studio</groupId>-->
-        <!--            <artifactId>common-repository-mgnc2</artifactId>-->
-        <!--            <version>1.0</version>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>com.belerweb</groupId>
-            <artifactId>pinyin4j</artifactId>
-            <version>2.5.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun.oss</groupId>
-            <artifactId>aliyun-sdk-oss</artifactId>
-            <version>3.15.1</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>3.8.0</version> <!-- 使用最新版本 -->
-        </dependency>
-        <dependency>
-            <groupId>com.jcraft</groupId>
-            <artifactId>jsch</artifactId>
-            <version>0.1.55</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun.openservices</groupId>
-            <artifactId>aliyun-log</artifactId>
-            <version>0.6.100</version>
-        </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.shgame.996studio</groupId>-->
-        <!--            <artifactId>common-adapter</artifactId>-->
-        <!--            <version>1.0</version>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.shgame.996studio</groupId>
-            <artifactId>common-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.shgame.996studio</groupId>
-            <artifactId>common-adapter</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.shgame.996studio</groupId>
-            <artifactId>common-repository-dhsfc2</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.shgame.996studio</groupId>
-            <artifactId>common-repository-mgnc2</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.shgame.996studio</groupId>
-            <artifactId>common-repository-sdk</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.5</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
-
+    <!--spingboot应用打包插件-->
     <build>
-        <finalName>app</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
