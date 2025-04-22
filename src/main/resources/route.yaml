@@ -1,0 +1,29 @@
+- Name: testK8s
+  Protocol: http
+  Path: /
+  Timeout: 60000
+  Retries: 5
+  UpstreamInfo:
+    Port: 8090
+    SourceID: cls-95cdr7x5
+    SourceType: TKE
+    RealSourceType: TKE
+    SourceName: 996热血江湖引擎
+    Namespace: mng-prod
+    ServiceName: manage-adapter
+    Algorithm: round-robin
+    HealthStatus: HEALTHCHECKS_OFF
+  UpstreamType: Kubernetes
+  Routes:
+    - Name: testK8s
+      Methods:
+        - GET
+        - POST
+      Paths:
+        - /openserver
+      Protocols:
+        - http
+        - https
+      PreserveHost: false
+      HttpsRedirectStatusCode: 426
+      StripPath: true
